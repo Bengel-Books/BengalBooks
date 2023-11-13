@@ -80,6 +80,31 @@ if (homeUrl.includes("book.html")) {
     
     overview(book);
 
+    function PopupReview(){
+        const currentDiv = document.getElementById("newReview");
+        const child = document.createElement("div");
+        child.innerHTML = `
+        <div class="review", id="newerReview">
+        <h3>Enter Review</h3>
+        <input id="comment">
+        <label for="comment">Comment</label>
+        <input id="rating">
+        <label for="rating">Rate</label>
+        <input id="username">
+        <label for="username">Name</label>
+        <button onClick="GetListingInputs()" id="submitBtn">Submit</button>
+        </div>
+        `;
+        currentDiv.appendChild(child);
+    }
+    
+    function saveReview(){
+        username = document.getElementById("username").value;
+        comment = document.getElementById("comment").value;
+        rating = document.getElementById("rating").value;
+        document.getElementById("newerListing").remove();
+    }
+
 }
 
 function overview(book) {
@@ -98,17 +123,24 @@ function overview(book) {
     <h3>${book.name}</h3>
     <img src=${book.images} height=100 width=100>
     <p>
-        ${book.description}
+        Status: ${book.status}<br>
+        Stock: ${book.stock}<br><br>
+        Description: ${book.description}
     </p>
-    <div class="reviews1">
-    <p>    
-        Reviews:${(reviews)}
-    </p>
-    <button type="button" id="reviewButton" class="reviewButton">Add Review</button>
-    </div>
     </div>`;
     
     currentDiv.appendChild(child);
+
+    const reviewDiv = document.getElementById("review");
+    const child2 = document.createElement("div");
+    child2.innerHTML = `<div class="review"> 
+    <p>    
+        Reviews:${(reviews)}
+    </p>
+    </div>
+    </div>`;
+    
+    reviewDiv.appendChild(child2);
     // let btn = document.createElement("button");
     // btn.innerHTML = "Add to Wishlist";
     // btn.onclick = function () {AddToWishlist(listing);};

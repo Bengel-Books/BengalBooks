@@ -24,6 +24,16 @@ div.overview{
     text-align: left;
     margin:auto;
 }
+div.review{
+    background-color: lightyellow;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 5%;
+    padding: 2px;
+    align-items: center;
+    text-align: left;
+    margin:auto;
+}
 .searchBar{
     text-align:left;
     padding:10px;
