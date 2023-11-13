@@ -178,6 +178,9 @@ function ClearListings(){
 var proButton = document.getElementById('profileButton');
 proButton.addEventListener('click', function() {window.open("profile.html","_self")}); 
 
+var homeButton = document.getElementById('homeButton');
+homeButton.addEventListener('click', function() {window.open("homePage.html","_self")}); 
+
 // function PostWishlistItem(name, price, description) //FIXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--------------------------
 // {
 //     let listingOwner = userEmail;
