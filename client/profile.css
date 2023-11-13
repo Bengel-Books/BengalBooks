@@ -1,0 +1,28 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+h1.heading{
+    text-align: center;
+    font-style: oblique;
+    
+}
+body{
+    background-color: beige;
+}
+.attributes{
+    background-color: white;
+    grid-row: 1;
+    grid-column: 1;
+}
+.listing{
+    grid-row: 2/5;
+    grid-column: 1/3;
+}
+.sortBy{
+    background-color: white;
+    grid-row: 1;
+    grid-column: 3/8;
+}

@@ -1,0 +1,41 @@
+h1.heading
+{
+    text-align: center;
+    font-style: oblique;
+    
+}
+div.listing{
+    background-color: lightyellow;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 5%;
+    padding: 2px;
+    align-items: center;
+    text-align: center;
+    margin:auto;
+}
+.searchBar{
+    text-align:left;
+    padding:10px;
+}
+.sortBy{
+    float: left;
+    width:70px;
+    padding: 3px;
+    border: 3px solid black;
+}
+button.listingButton
+{
+    float:right;
+    color:black;
+    background-color: red;
+    padding: 5px;
+}
+.profileButton{
+    offset: 10px 10px 10px;
+    padding: 5px;
+}
+body{
+    background-color: purple;
+}
+

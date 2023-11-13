@@ -1,0 +1,23 @@
+
+#webTitle{
+    text-align: center;
+    font-size: 3em;
+    font-style: oblique;
+  }
+
+body{
+  background-color: beige;
+  text-align: justify;
+}
+
+h1{
+  font-style: oblique;
+  text-align: center;
+}
+label{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+input{
+  border-color: black;
+}
