@@ -1,89 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Bengal Books
+        </title>
+        <link rel="stylesheet" href="styles_home.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1 class="heading">
+            <img src="images/LSU-Tigers-logo.jpg" height="40" width="40" >
+            Bengal Books
+        </h1>
 
-.row {
-    display: -ms-flexbox; /* IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
-    flex-wrap: wrap;
-    margin: 0 -16px;
-  }
-  
-  .col-25 {
-    -ms-flex: 25%; /* IE10 */
-    flex: 25%;
-  }
-  
-  .col-50 {
-    -ms-flex: 50%; /* IE10 */
-    flex: 50%;
-  }
-  
-  .col-75 {
-    -ms-flex: 75%; /* IE10 */
-    flex: 75%;
-  }
-  
-  .col-25,
-  .col-50,
-  .col-75 {
-    padding: 0 16px;
-  }
-  
-  .container {
-    background-color: rgb(228, 228, 120);
-    opacity: 0.3;
-    padding: 5px 20px 15px 20px;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-  }
-  
-  input[type=text] {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  label {
-    margin-bottom: 10px;
-    display: block;
-  }
-  
-  .icon-container {
-    margin-bottom: 20px;
-    padding: 7px 0;
-    font-size: 24px;
-  }
-  
-  .btn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    width: 100%;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 17px;
-  }
-  
-  .btn:hover {
-    background-color: #45a049;
-  }
-  
-  span.price {
-    float: right;
-    color: black;
-  }
-  
-  @media (max-width: 800px) {
-    .row {
-      flex-direction: column-reverse;
-    }
-    .col-25 {
-      margin-bottom: 20px;
-    }
-  }
-  body{
-    background-color: purple;
-  }
+        <button class="homeButton", id="homeButton"></button>
+        <label for="homeButton">home</label>
+        
+        <div id="root"></div>
+        <div id="overview"></div>
+        <div id="review"></div>
+
+        <button type="button" id="statusButton" class="statusButton" onclick="location.reload()">Check Availablity</button><br>
+        <button type="button" id="reviewButton" class="reviewButton" onclick="PopupReview()">Add Review</button><br>
+        <button type="button" id="orderButton" class="orderButton" onclick="orderBook()">Order Book</button>
+
+        <div class="newReview" id="newReview">
+        
+            
+        </div>
+        <div class="neworder" id="neworder">
+
+        </div>
+        <div id="order"></div>
+        
+        <script src="homepage.js"></script>
+    </body>
+</html>
