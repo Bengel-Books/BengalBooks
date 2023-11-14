@@ -129,8 +129,8 @@ function overview(book) {
 
 function PopupReview(){
     
-    const currentDiv = document.getElementById("newReview");
-    const child = document.createElement("div");
+    let currentDiv = document.getElementById("newReview");
+    let child = document.createElement("div");
     child.innerHTML = `
     <div class="review", id="newerReview">
     <h3>Enter Review</h3>
@@ -147,6 +147,36 @@ function PopupReview(){
         return;
     }
     currentDiv.appendChild(child);
+}
+
+function orderBook(){
+    let newDiv = document.getElementById("neworder");
+    let newchild = document.createElement("div");
+    newchild.innerHTML = `
+    <div class="order", id="newerorder">
+    <h3>Order Book!</h3>
+    <input id="date" type="date">
+    <label for="date">today's date</label><br>
+    <input id="time" type="time">
+    <label for="date">today's date</label><br>
+    <button onClick="confirmOrder()" id="orderBtn">Order</button>
+    </div>
+    `;
+    if(document.getElementById("newerorder") != null) {
+        return;
+    }
+    newDiv.appendChild(newchild);
+}
+
+function confirmOrder(){
+    let date = document.getElementById("date").value;
+    let time = document.getElementById("time").value
+    console.log(date + " " + time);
+    var someDate = new Date(date + " " + time);
+    var numberOfDaysToAdd = 12;
+    var result = someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
+    console.log(new Date(result))
+    alert("Book is due on " + new Date(result));
 }
 
 function saveReview(){
