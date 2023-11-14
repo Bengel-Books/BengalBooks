@@ -20,8 +20,8 @@ new Listing("hammer4", "hammer.jpg", "this is the description for the hammer", "
 listings = JSON.parse(localStorage.getItem("myListings"));
 console.log(listings);
 
-var proButton = document.getElementById('homeButton');
-proButton.addEventListener('click', function() {window.open("ColumbusList_home.html","_self")}); 
+var homeButton = document.getElementById('homeButton');
+homeButton.addEventListener('click', function() {window.open("homePage.html","_self")}); 
 
 CreateListings()
 function CreateListings(){ //loop through each listing and display it
