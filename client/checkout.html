@@ -9,7 +9,7 @@
       <div class="col-75">
         <div class="container">
           
-          <form action="/confirmation.html">
+          <form action="confirmation.html">
     
             <div class="row">
               <div class="col-50">
@@ -68,7 +68,7 @@
           <h4>Cart:
             <span class="price" style="color:black">
               <i class="fa fa-shopping-cart"></i>
-              
+
             </span>
           </h4>
           <p><a href="#"></a>Artificial Intelligence Textbook for Class IX <span class="price">x 1 - $115</span></p>
@@ -77,8 +77,13 @@
           <p>Tax: <span class="price" style="color:black"><b>$10.93</b></span></p>
           <p>Total: <span class="price" style="color:black"><b>$125.93</b></span></p>
         </div>
-        <input type="submit" value="Continue to checkout" class="btn">
+        <input id = "submit" type="submit" value="Continue to checkout" class="btn">
       </div>
+
+      <script>
+        var submitButton = document.getElementById('submit');
+        submitButton.addEventListener('click', function() {window.open("client/confirmation.html","_self")}); 
+      </script>
     </form>
     </div>
 </body>    
