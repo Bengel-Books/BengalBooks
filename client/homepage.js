@@ -128,6 +128,7 @@ function overview(book) {
 }
 
 function PopupReview(){
+    
     const currentDiv = document.getElementById("newReview");
     const child = document.createElement("div");
     child.innerHTML = `
@@ -142,11 +143,13 @@ function PopupReview(){
     <button onClick="saveReview()" id="submitBtn">Submit</button>
     </div>
     `;
+    if(document.getElementById("newerReview") != null) {
+        return;
+    }
     currentDiv.appendChild(child);
 }
 
 function saveReview(){
-    document.getElementById("newerReview").style.display;
     let username = document.getElementById("username").value;
     let comment = document.getElementById("comment").value;
     let rating = document.getElementById("rating").value;
@@ -165,7 +168,7 @@ function saveReview(){
 
     const reviewDiv = document.getElementById("reviewList");
     reviewDiv.innerHTML = reviews;
-        
+    
     document.getElementById("newerReview").remove();
 }
 
