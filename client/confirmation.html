@@ -14,6 +14,12 @@
     <br>
     
     <div>
-        <button type ="button">Back to Homepage</button>
+        <button id = "backButton" type ="button">Back to Homepage</button>
     </div>
+
+    <script>
+        var backButton = document.getElementById('backButton');
+        backButton.addEventListener('click', function() {window.open("homePage.html","_self")}); 
+    </script>
+
 </body>
