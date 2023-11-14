@@ -1,6 +1,6 @@
 class Listing //
 {
-    constructor(name, images, description, stock=5, status='available', reviews=['nice','good'])
+    constructor(name, images, description, stock=5, status='available', reviews=['Steve: nice | 7/10','Raj: good | 8/10'])
     {
         this.name = name
         this.images = images;
@@ -80,36 +80,13 @@ if (homeUrl.includes("book.html")) {
     
     overview(book);
 
-    function PopupReview(){
-        const currentDiv = document.getElementById("newReview");
-        const child = document.createElement("div");
-        child.innerHTML = `
-        <div class="review", id="newerReview">
-        <h3>Enter Review</h3>
-        <input id="comment">
-        <label for="comment">Comment</label>
-        <input id="rating">
-        <label for="rating">Rate</label>
-        <input id="username">
-        <label for="username">Name</label>
-        <button onClick="GetListingInputs()" id="submitBtn">Submit</button>
-        </div>
-        `;
-        currentDiv.appendChild(child);
-    }
     
-    function saveReview(){
-        username = document.getElementById("username").value;
-        comment = document.getElementById("comment").value;
-        rating = document.getElementById("rating").value;
-        document.getElementById("newerListing").remove();
-    }
 
 }
 
 function overview(book) {
     console.log(book.name);
-    let reviews = "<ul>";
+    let reviews = "<ul id=\"reviewList\">";
     let i = 0;
     while (i < book.reviews.length) {
         reviews = reviews.concat("<li>" + book.reviews[i] + "</li>");
@@ -134,7 +111,7 @@ function overview(book) {
     const reviewDiv = document.getElementById("review");
     const child2 = document.createElement("div");
     child2.innerHTML = `<div class="review"> 
-    <p>    
+    <p id="reviewP">    
         Reviews:${(reviews)}
     </p>
     </div>
@@ -150,8 +127,47 @@ function overview(book) {
     console.log(book);
 }
 
+function PopupReview(){
+    const currentDiv = document.getElementById("newReview");
+    const child = document.createElement("div");
+    child.innerHTML = `
+    <div class="review", id="newerReview">
+    <h3>Enter Review</h3>
+    <input id="comment">
+    <label for="comment">Comment</label>
+    <input id="rating">
+    <label for="rating">Rate</label>
+    <input id="username">
+    <label for="username">Name</label>
+    <button onClick="saveReview()" id="submitBtn">Submit</button>
+    </div>
+    `;
+    currentDiv.appendChild(child);
+}
 
+function saveReview(){
+    document.getElementById("newerReview").style.display;
+    let username = document.getElementById("username").value;
+    let comment = document.getElementById("comment").value;
+    let rating = document.getElementById("rating").value;
+    let books = JSON.parse(sessionStorage.getItem("listings"));
+    console.log(books);
+    console.log(comment);
+    let book = books[sessionStorage.getItem("index")];
+    book.reviews.push(username + ": " + comment + " | " + rating + "/10");
 
+    let reviews = "";
+    let i = 0;
+    while (i < book.reviews.length) {
+        reviews = reviews.concat("<li>" + book.reviews[i] + "</li>");
+        i++;
+    }
+
+    const reviewDiv = document.getElementById("reviewList");
+    reviewDiv.innerHTML = reviews;
+        
+    document.getElementById("newerReview").remove();
+}
 
 function Search(){ //for search bar
     thingToSearch = document.getElementById("searchInput").value;
