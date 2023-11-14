@@ -20,7 +20,7 @@ let tempDesc = [
     "Be the leading thinkers in the Age of Machine Intelligence"   
 ]
 let listings = [];
-let tempListings = listings; //temporary listings for use by sort by recency button
+var tempListings = []; //temporary listings for use by sort by recency button
 let wishlist = [listings[0]];
 let book = listings[0];
 var currindex = 0;
@@ -43,11 +43,7 @@ function makeListings() {
         </div>`;
         
         currentDiv.appendChild(child);
-        // let btn = document.createElement("button");
-        // btn.innerHTML = "Overview";
-        // btn.onclick = function () {window.open("book.html","_self");};
-    
-        // currentDiv.appendChild(btn);
+        
     }
     console.log(listings);
 }
@@ -64,9 +60,13 @@ function bookPage(index) {
     sessionStorage.setItem("listings", JSON.stringify(listings));
     window.open("book.html","_self");
     
-    // overview(currbook);
-    // console.log(currbook);
-    // console.log(index);
+}
+
+function searchBookPage(index) {
+    sessionStorage.setItem("index", index);
+    sessionStorage.setItem("listings", JSON.stringify(tempListings));
+    window.open("book.html","_self");
+    
 }
 
 if (homeUrl.includes("book.html")) {
@@ -118,10 +118,6 @@ function overview(book) {
     </div>`;
     
     reviewDiv.appendChild(child2);
-    // let btn = document.createElement("button");
-    // btn.innerHTML = "Add to Wishlist";
-    // btn.onclick = function () {AddToWishlist(listing);};
-    // currentDiv.appendChild(btn);
 
     
     console.log(book);
@@ -232,24 +228,25 @@ $("#searchBar").on("change keyup paste", function(){
 });
 
 function ShowListings(listingsToShow){
-    listingsToShow.forEach(listing => {
-        console.log(listing.name);
+    tempListings = listingsToShow;
+    for (i=0; i<listingsToShow.length; i++) {
+        let curListing = listingsToShow[i];
         const currentDiv = document.getElementById("listings");
         const child = document.createElement("div");
         child.innerHTML = `<div class="listing"> 
-        <h3>${listing.name}</h3>
-        <img src=${listing.images} height=100 width=100>
-        <p>
-            ${listing.description}
+        <h3 id="lName">${curListing.name}</h3>
+        <img src=${curListing.images} height=100 width=100 id="lImage">
+        <p id="lDescription">
+            ${curListing.description}
         </p>
+        <button type="button" id="button${i}2" onclick="searchBookPage(${i})">Overview!</button>
+
         </div>`;
         
         currentDiv.appendChild(child);
-        // let btn = document.createElement("button");
-        // btn.innerHTML = "Add to Wishlist";
-        // btn.onclick = function () {AddToWishlist(listing);};
-        // currentDiv.appendChild(btn);
-    })
+        
+    }
+    
 }
 
 function ClearListings(){
