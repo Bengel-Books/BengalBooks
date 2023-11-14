@@ -173,6 +173,7 @@ function confirmOrder(){
     var result = someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
     console.log(new Date(result))
     alert("Book is due on " + new Date(result));
+    window.open("checkout.html","_self")
 }
 
 function saveReview(){
