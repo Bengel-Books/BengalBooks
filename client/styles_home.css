@@ -5,7 +5,7 @@ h1.heading
     
 }
 div.listing{
-    background-color: lightyellow;
+    background-color: lavender;
     width: 300px;
     border: 2px solid black;
     border-radius: 5%;
@@ -15,7 +15,7 @@ div.listing{
     margin:auto;
 }
 div.overview{
-    background-color: lightyellow;
+    background-color: lavender;
     width: 300px;
     border: 2px solid black;
     border-radius: 5%;
@@ -25,7 +25,7 @@ div.overview{
     margin:auto;
 }
 div.review{
-    background-color: lightyellow;
+    background-color: lavender;
     width: 300px;
     border: 2px solid black;
     border-radius: 5%;
@@ -35,7 +35,7 @@ div.review{
     margin:auto;
 }
 div.order{
-    background-color: lightyellow;
+    background-color: lavender;
     width: 300px;
     border: 2px solid black;
     border-radius: 5%;
@@ -66,6 +66,6 @@ button.listingButton
     padding: 5px;
 }
 body{
-    background-color: purple;
+    background-color: beige;
 }
 
