@@ -1,14 +1,42 @@
 body{
     text-align: center;
-    background-color: purple;
+    background-image: linear-gradient(to right, rgb(121, 59, 121), rgb(202, 138, 202));
     font-size: 50;
 }
+
+.heading{
+    font-size: 50;
+}
+
+@font-face {
+    font-family: bengalBooksFont;
+    src: url(roboto-regular.ttf);
+}t-face
 
 img{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 30%;
+    width: 20%;
+}
+
+.left{
+    text-align: left;
+}
+
+.right{
+    text-align: right;
+}
+
+.boxed{
+    border: 15px ridge goldenrod;
+    background-color: rgb(247, 247, 247);
+}
+
+.boxed2{
+    text-align: left;
+    border: 15px ridge goldenrod;
+    background-color: rgb(247, 247, 247);
 }
 
 button{
