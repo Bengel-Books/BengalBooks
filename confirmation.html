@@ -1,0 +1,41 @@
+<head>
+    <link rel="stylesheet" href="confirmation.css">
+    <title>Order Success!</title>
+</head>
+
+<h1 class="heading">
+    <img src="images/LSU-Tigers-logo.jpg" height="50" width="50" >
+    Bengal Books
+</h1>
+
+<body>
+
+    <div>
+        <img src="success.png" alt="Success!">
+    </div>
+    <div class = "boxed">
+        <b><i>Order placed successfully! Geaux Tigers!</b></i>
+    </div>
+    
+    <div class = "boxed2">
+        <b>Order summary:</b>
+        <br>
+        <u><p id = "left">Artificial Intelligence Textbook for Class IX x 1 $115</p></u>
+        Subtotal: $115.00
+            <br>
+            Tax: $10.93
+            <br>
+            <b>Total: $125.93</b>
+        </p>
+    </div>
+
+    <div>
+        <button id = "backButton" type ="button" class = "boxed">Back to Homepage</button>
+    </div>
+
+    <script>
+        var backButton = document.getElementById('backButton');
+        backButton.addEventListener('click', function() {window.open("homePage.html","_self")}); 
+    </script>
+
+</body>
